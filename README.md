@@ -223,7 +223,7 @@ Busca en el las siguientes lineas de codigo:
 
  label_lines = [line.rstrip() for line
 
-                   in tf.gfile.GFile("retrained_labels11.txt")]
+   in tf.gfile.GFile("retrained_labels11.txt")]
 
 
 
