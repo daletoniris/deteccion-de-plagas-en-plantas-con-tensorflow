@@ -1,36 +1,65 @@
-# deteccion-de-plagas-en-plantas-con-tensorflow
+# Deteccion-de-plagas-en-plantas-con-tensorflow
 This code allows you to detect pests in several species of edible plants: potatoes, tomatoes, cherries, orange trees ... among others. Use tensorflow and I can do it with images, videos, or in real time with a pc and a camera or a raspberry pi with a camera.
 To use my code, you must have installed tensorflow and opencv.
 You will be able to detect the following pests:
 for tomato
+
 healthy raspberry
+
 leaf spot isariopisis grape
+
 stain leaf gray corn
+
 Healthy mnanzana
+
 Cedar apple ro
+
 dusty mildew green leaves
+
 tomato mosaic virus
+
 healthy cherry
+
 northern tizon or maiz leaf
+
 healthy peach
+
 cherry mushroom podosphaera clandestine
+
 greening orange
+
 tomato late blight
+
 tomato bacterial spot
+
 healthy grape
+
 common mold corn
+
 tomato leaf mold
+
 bacterial blotch peppers
+
 grape black rot
+
 early tomato
+
 healthy strawberry
+
 leaf spot tomato
+
 grape measles
+
 curl virus yellow leaf tomato
+
 scorched leaf strawberry
+
 healthy potato
+
 pudridumbrenegraen-apples
+
 healthy blueberries
+
 late tizon potato
 healthy pepper
 healthy tomato
@@ -85,6 +114,7 @@ python labelimage.py "path of the image you want to try"
 If you want to train a new moidelo, use the retrain.py file and follow the steps below:
 
 https://github.com/VikramTiwari/tensorflow-retrain-sample
+
 happy hacking!
 
 
