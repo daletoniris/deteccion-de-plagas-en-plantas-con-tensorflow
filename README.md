@@ -95,7 +95,7 @@ Search the following code lines:
 
  label_lines = [line.rstrip () for line
 
-                   in tf.gfile.GFile ("retrained_labels11.txt")]
+   in tf.gfile.GFile ("retrained_labels11.txt")]
 
 
 
