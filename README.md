@@ -2,7 +2,8 @@
 This code allows you to detect pests in several species of edible plants: potatoes, tomatoes, cherries, orange trees ... among others. Use tensorflow and I can do it with images, videos, or in real time with a pc and a camera or a raspberry pi with a camera.
 To use my code, you must have installed tensorflow and opencv.
 You will be able to detect the following pests:
-for tomato
+
+Spider tomato
 
 healthy raspberry
 
@@ -12,7 +13,7 @@ stain leaf gray corn
 
 Healthy mnanzana
 
-Cedar apple ro
+Cedar apple scab
 
 dusty mildew green leaves
 
@@ -61,14 +62,23 @@ pudridumbrenegraen-apples
 healthy blueberries
 
 late tizon potato
+
 healthy pepper
+
 healthy tomato
+
 early tizon potato
+
 costra apple
+
 tomato focus point
+
 healthy soy
+
 healthy corn
+
 peach bacterial blotch
+
 If you are in a raspberry pi you can follow this tutorial to install tensorflow:
 https://www.tensorflow.org/install/install_raspbian
 Or follow these steps if you are in Ubuntu:
@@ -120,44 +130,83 @@ happy hacking!
 
 Para usar mi codigo, debes tener instalado tensorflow y opencv.
 Podras detectar las siguientes plagas o te dira si tu planta está sana:
-ara a del tomate
+
+araña  del tomate
+
 frambuesa sana
+
 mancha foliar isariopisis uva
+
 mancha hoja gris maiz
+
 mnanzana saludable
-ro a de manzana de cedro
+
+roña de manzana de cedro
+
 moho polvoriento hojas verdes
+
 tomate virus mosaico
+
 cereza saludable
+
 tizon norte o hoja maiz
+
 melocoton sano
-cereza hongo podosphaera clandestina 
+
+cereza hongo podosphaera clandestina
+
 enverdecimiento naranja
+
 tizon tardio tomate
+
 punto bacteriano tomate
+
 uva sana
+
 moho comun maiz
+
 molde de hoja tomate
+
 mancha bacteriana pimientos
+
 pudredumbre negra uva
+
 tizon temprano tomate
+
 fresa sana
+
 mancha hoja tomate
+
 sarampion de uva
+
 virus de curl hoja amarilla tomate
+
 fresa hoja chamuscada
+
 papa sana
+
 pudredumbrenegraenmanzanas
+
 arandanos saludables
+
 tizon tardio papa
+
 pimiento saludable
+
 tomate sano
+
 tizon temprano papa
+
 costramanzana
+
 punto de enfoque tomate
+
 soja sana
+
 maiz saludable
+
 mancha bacteriana melocoton
+
 Si estás en una raspberry pi puedes seguir este tutorial para instalar tensorflow:
 https://www.tensorflow.org/install/install_raspbian
 O sigue estos pasos si estás en Ubuntu:
