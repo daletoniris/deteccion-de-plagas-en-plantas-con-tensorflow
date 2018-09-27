@@ -80,9 +80,13 @@ healthy corn
 peach bacterial blotch
 
 #If you are in a raspberry pi you can follow this tutorial to install tensorflow:
+
 https://www.tensorflow.org/install/install_raspbian
+
 #Or follow these steps if you are in Ubuntu:
+
 https://www.tensorflow.org/install/install_linux
+
 #You can follow this guide to compile opencv in raspberry:
 https://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/
 #Once you have installed tensorflow and opencv, download my already trained model:
