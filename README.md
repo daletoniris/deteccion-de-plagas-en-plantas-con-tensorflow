@@ -93,68 +93,71 @@ Search the following code lines:
 
 # Loads label file, strips off carriage return
 
- '''label_lines = [line.rstrip () for line
+ label_lines = [line.rstrip () for line
 
- '''  in tf.gfile.GFile ("retrained_labels11.txt")]
-
-
+ in tf.gfile.GFile ("retrained_labels11.txt")]
 
 
-''' with tf.gfile.FastGFile ("retrained_graph11.pb", 'rb')
+
+
+with tf.gfile.FastGFile ("retrained_graph11.pb", 'rb')
 
 Modify there the route where you have saved the model that you have downloaded.
 Now look for the following code lines at the beginning of the file:
-#if you use a video place your video here:
+###if you use a video place your video here:
 video = 'march.mp4'
-#if you use a video uncomment this line:
+###if you use a video uncomment this line:
 #cam = cv2.VideoCapture (video)
-# This line is to make the detection in real time through your camera, comment on it if you do it with video:
+###This line is to make the detection in real time through your camera, comment on it if you do it with video:
 cam = cv2.VideoCapture (0)
 
 There, comment or uncomment the code according to your need if you want to do it in real time with a camera or if you want to do the detection from a video.
 
-To execute your code:
+###To execute your code:
 python recognition.py
 You should first see the prediction that corresponds to the type of pest you are detecting.
 
 
-You can use the file: labelimage.py if you want to do the detection with photos, you can do it in the following way:
+###You can use the file: 
+labelimage.py 
+###if you want to do the detection with photos, you can do it in the following way:
 python labelimage.py "path of the image you want to try"
 
-If you want to train a new moidelo, use the retrain.py file and follow the steps below:
+###If you want to train a new moidelo, use the retrain.py file and follow the steps below:
 
 https://github.com/VikramTiwari/tensorflow-retrain-sample
 
 
-If you speak English you will want to understand your model in English, so you can download the original dataset from here and train with those images so that your human text is in English:
+###If you speak English you will want to understand your model in English, so you can download the original dataset from here and train with those images so that your human text is in English:
 
 https://github.com/salathegroup/plantvillage_deeplearning_paper_dataset/tree/master/raw/color
 
 
-If you want to understand the model for use on mobile devices, you can see this guide, you will use mobilenet for this purpose :
+###If you want to understand the model for use on mobile devices, you can see this guide, you will use mobilenet for this purpose :
 
 https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/index.html#3
 
 
-I use mobilenet mobilenet_v1_1.0_224, you can download it from here:
+###I use mobilenet mobilenet_v1_1.0_224, you can download it from here:
 
 https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1.md
 
 
-Then you must convert your model to a Lite type model to work in android studio, and the build.gradle can recognize it. Use this command, it works fine on Ubuntu 16.04, you will use it for this purpose, it is installed when you install tensorflow:
+###Then you must convert your model to a Lite type model to work in android studio, and the build.gradle can recognize it. ###Use this command, it works fine on Ubuntu 16.04, you will use it for this purpose, it is installed when you install ###tensorflow:
 
 toco --input_file=tf_files/retrained_graph.pb --output_file=tf_files/optimized_graph.lite --input_format=TENSORFLOW_GRAPHDEF 
 --output_format=TFLITE --input_shape="1,224,224,3" --input_array=input --output_array=final_result --inference_type=FLOAT --input_data_type=FLOAT
 
-Now you will have an optimized model for android studio: optimized_graph.lite.
+###Now you will have an optimized model for android studio: 
+optimized_graph.lite.
 
 
-Now you must copy your model to android studio, you can follow this guide to configure your android studio in ubuntu 16.04:
+###Now you must copy your model to android studio, you can follow this guide to configure your android studio in ubuntu 16.04:
 
 https://codelabs.developers.google.com/codelabs/tensorflow-for-poets-2-tflite/#3
 
 
-You can download from here the android studio:
+###You can download from here the android studio:
 
 https://developer.android.com/studio/
 
@@ -169,131 +172,5 @@ https://developer.android.com/studio/
 happy hacking!
 
 
-Para usar mi codigo, debes tener instalado tensorflow y opencv.
-Podras detectar las siguientes plagas o te dira si tu planta está sana:
-
-araña  del tomate
-
-frambuesa sana
-
-mancha foliar isariopisis uva
-
-mancha hoja gris maiz
-
-mnanzana saludable
-
-roña de manzana de cedro
-
-moho polvoriento hojas verdes
-
-tomate virus mosaico
-
-cereza saludable
-
-tizon norte o hoja maiz
-
-melocoton sano
-
-cereza hongo podosphaera clandestina
-
-enverdecimiento naranja
-
-tizon tardio tomate
-
-punto bacteriano tomate
-
-uva sana
-
-moho comun maiz
-
-molde de hoja tomate
-
-mancha bacteriana pimientos
-
-pudredumbre negra uva
-
-tizon temprano tomate
-
-fresa sana
-
-mancha hoja tomate
-
-sarampion de uva
-
-virus de curl hoja amarilla tomate
-
-fresa hoja chamuscada
-
-papa sana
-
-pudredumbrenegraenmanzanas
-
-arandanos saludables
-
-tizon tardio papa
-
-pimiento saludable
-
-tomate sano
-
-tizon temprano papa
-
-costramanzana
-
-punto de enfoque tomate
-
-soja sana
-
-maiz saludable
-
-mancha bacteriana melocoton
-
-Si estás en una raspberry pi puedes seguir este tutorial para instalar tensorflow:
-https://www.tensorflow.org/install/install_raspbian
-O sigue estos pasos si estás en Ubuntu:
-https://www.tensorflow.org/install/install_linux
-Puedes seguir esta guia para compilar opencv en raspberry:
-https://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/
-Una vez que tengas instalado tensorflow y opencv, descarga mi modelo ya entrenado:
-https://drive.google.com/drive/folders/1sowAcyeYXFCnhekE-WSOxUt5PASTijLq
-ahora deberas abrir y editar el archivo: "recognition.py"
-Busca en el las siguientes lineas de codigo:
-
-
-# Loads label file, strips off carriage return
-
- label_lines = [line.rstrip() for line
-
-   in tf.gfile.GFile("retrained_labels11.txt")]
-
-
-
-
- with tf.gfile.FastGFile("retrained_graph11.pb", 'rb')
-
-Modifica alli la ruta donde has guardo el modelo que te has descargado.
-Ahora busca al incio del mismo archivo las siguientes lineas de codigo:
-#if you use a video place your video here:
-video = 'marcha.mp4'
-#if you use a video uncomment this line:
-#cam = cv2.VideoCapture(video)
-# This line is to make the detection in real time through your camera, comment on it if you do it with video:
-cam = cv2.VideoCapture(0) 
-
-Allí comenta o descomenta el codigo segun tu necesidad si quieres hacerlo en tiempo real con una camara o si quieres hacer la detección desde un video.
-
-Para ejecutar tu codigo:
-python recognition.py
-Deberas ver en primer lugar la predicción que corresponde al tipo de plaga que esta detectando.
-
-
-Puedes usar el archivo: labelimage.py si quieres hacer la deteccón con fotos, puedes hacerlo de la siguiente manera:
-python labelimage.py "ruta de la imagen que quieres probar"
-
-Si quieres entrenar un moidelo nuevo usa el archivo retrain.py y sigue los siguientes pasos:
-
-https://github.com/VikramTiwari/tensorflow-retrain-sample
-
-Feliz hacking!
 
 
