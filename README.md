@@ -93,14 +93,14 @@ Search the following code lines:
 
 # Loads label file, strips off carriage return
 
- label_lines = [line.rstrip () for line
+ '''label_lines = [line.rstrip () for line
 
-   in tf.gfile.GFile ("retrained_labels11.txt")]
-
-
+ '''  in tf.gfile.GFile ("retrained_labels11.txt")]
 
 
- with tf.gfile.FastGFile ("retrained_graph11.pb", 'rb')
+
+
+''' with tf.gfile.FastGFile ("retrained_graph11.pb", 'rb')
 
 Modify there the route where you have saved the model that you have downloaded.
 Now look for the following code lines at the beginning of the file:
