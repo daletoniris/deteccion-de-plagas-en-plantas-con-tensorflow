@@ -125,6 +125,47 @@ If you want to train a new moidelo, use the retrain.py file and follow the steps
 
 https://github.com/VikramTiwari/tensorflow-retrain-sample
 
+
+If you speak English you will want to understand your model in English, so you can download the original dataset from here and train with those images so that your human text is in English:
+
+https://github.com/salathegroup/plantvillage_deeplearning_paper_dataset/tree/master/raw/color
+
+
+If you want to understand the model for use on mobile devices, you can see this guide, you will use mobilenet for this purpose :
+
+https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/index.html#3
+
+
+I use mobilenet mobilenet_v1_1.0_224, you can download it from here:
+
+https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1.md
+
+
+Then you must convert your model to a Lite type model to work in android studio, and the build.gradle can recognize it. Use this command, it works fine on Ubuntu 16.04, you will use it for this purpose, it is installed when you install tensorflow:
+
+toco --input_file=tf_files/retrained_graph.pb --output_file=tf_files/optimized_graph.lite --input_format=TENSORFLOW_GRAPHDEF 
+--output_format=TFLITE --input_shape="1,224,224,3" --input_array=input --output_array=final_result --inference_type=FLOAT --input_data_type=FLOAT
+
+Now you will have an optimized model for android studio: optimized_graph.lite.
+
+
+Now you must copy your model to android studio, you can follow this guide to configure your android studio in ubuntu 16.04:
+
+https://codelabs.developers.google.com/codelabs/tensorflow-for-poets-2-tflite/#3
+
+
+You can download from here the android studio:
+
+https://developer.android.com/studio/
+
+
+
+
+
+
+
+
+
 happy hacking!
 
 
