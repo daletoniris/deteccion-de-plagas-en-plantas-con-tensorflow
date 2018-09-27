@@ -2,7 +2,7 @@
 This code allows you to detect pests in several species of edible plants: potatoes, tomatoes, cherries, orange trees ... among others. Use tensorflow and I can do it with images, videos, or in real time with a pc and a camera or a raspberry pi with a camera.
 To use my code, you must have installed tensorflow and opencv.
 You will be able to detect the following pests:
-
+```
 Spider tomato
 
 healthy raspberry
@@ -78,7 +78,7 @@ healthy soy
 healthy corn
 
 peach bacterial blotch
-
+```
 ### If you are in a raspberry pi you can follow this tutorial to install tensorflow:
 
 https://www.tensorflow.org/install/install_raspbian
