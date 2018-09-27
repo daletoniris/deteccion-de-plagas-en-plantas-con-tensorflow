@@ -160,7 +160,7 @@ https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/index.html#
 https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1.md
 
 
-### Then you must convert your model to a Lite type model to work in android studio, and the build.gradle can recognize it. Use this command, it works fine on Ubuntu 16.04, you will use it for this purpose, it is installed when you install tensorflow:
+### Then you must convert your model to a Lite type model to work in android studio, and the build.gradle can recognize it. Use this command, it works fine on Ubuntu 16.04, you will use it for this purpose, Toco is installed when you install tensorflow:
 ```
 toco --input_file=tf_files/retrained_graph.pb --output_file=tf_files/optimized_graph.lite --input_format=TENSORFLOW_GRAPHDEF 
 --output_format=TFLITE --input_shape="1,224,224,3" --input_array=input --output_array=final_result --inference_type=FLOAT --input_data_type=FLOAT
