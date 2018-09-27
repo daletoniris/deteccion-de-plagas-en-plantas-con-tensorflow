@@ -140,7 +140,7 @@ labelimage.py
 ```
 python labelimage.py "path of the image you want to try"
 ```
-### If you want to train a new moidelo, use the retrain.py file and follow the steps below:
+### If you want to train a new model, use the retrain.py file and follow the steps below:
 
 https://github.com/VikramTiwari/tensorflow-retrain-sample
 
@@ -178,6 +178,8 @@ https://codelabs.developers.google.com/codelabs/tensorflow-for-poets-2-tflite/#3
 ### You can download from here the android studio:
 
 https://developer.android.com/studio/
+
+
 
 
 
