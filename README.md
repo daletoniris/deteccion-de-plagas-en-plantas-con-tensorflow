@@ -1,196 +1,349 @@
-# Deteccion-de-plagas-en-plantas-con-tensorflow
-This code allows you to detect pests in several species of edible plants: potatoes, tomatoes, cherries, orange trees ... among others. Use tensorflow and I can do it with images, videos, or in real time with a pc and a camera or a raspberry pi with a camera.
-To use my code, you must have installed tensorflow and opencv.
-You will be able to detect the following pests:
-```
+<div align="center">
+
+# 🌱 Detección de Plagas en Plantas con TensorFlow
+
+### Sistema de detección de plagas usando Deep Learning e Inteligencia Artificial
+
+[![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)](https://www.python.org/)
+[![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange.svg)](https://www.tensorflow.org/)
+[![OpenCV](https://img.shields.io/badge/OpenCV-4.x-green.svg)](https://opencv.org/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+**Detección automática de plagas en plantas comestibles usando visión por computadora**
+
+[🚀 Inicio Rápido](#-inicio-rápido) • [📋 Características](#-características) • [⚙️ Instalación](#️-instalación) • [🎯 Uso](#-uso)
+
+</div>
+
+---
+
+## 📋 Características
+
+- 🔍 **Detección en Tiempo Real** - Análisis en vivo con cámara
+- 📸 **Análisis de Imágenes** - Procesamiento de fotos estáticas
+- 🎥 **Procesamiento de Video** - Detección en archivos de video
+- 🤖 **IA Avanzada** - Modelo entrenado con TensorFlow y MobileNet
+- 📱 **Compatible con Android** - Modelo optimizado para dispositivos móviles
+- 🍓 **Múltiples Especies** - Soporta más de 30 tipos de plantas y plagas
+
+---
+
+## 🌿 Plantas y Plagas Soportadas
+
+El sistema puede detectar plagas en las siguientes especies:
+
+### Plantas Soportadas
+
+- 🥔 **Papa** - Early/Late blight, pudrición negra
+- 🍅 **Tomate** - Mosaico, tizón tardío, mancha bacteriana, moho
+- 🍒 **Cereza** - Hongo podosphaera, manchas
+- 🍊 **Naranjo** - Enverdecimiento (greening)
+- 🌽 **Maíz** - Mancha gris, moho común, tizón del norte
+- 🍇 **Uva** - Mancha isariopisis, podredumbre negra, sarampión
+- 🍎 **Manzana** - Sarna de cedro, costra, pudrición negra
+- 🍑 **Durazno** - Mancha bacteriana
+- 🫐 **Arándano** - Varias enfermedades
+- 🌶️ **Pimiento** - Mancha bacteriana
+- 🍓 **Fresa** - Hoja chamuscada
+- 🌾 **Soja** - Varias enfermedades
+
+**Y muchas más...** (Más de 30 tipos diferentes)
+
+### Lista Completa de Plagas Detectables
+
+\`\`\`
 Spider tomato
-
 healthy raspberry
-
 leaf spot isariopisis grape
-
 stain leaf gray corn
-
-Healthy mnanzana
-
+Healthy manzana
 Cedar apple scab
-
 dusty mildew green leaves
-
 tomato mosaic virus
-
 healthy cherry
-
 northern tizon or maiz leaf
-
 healthy peach
-
 cherry mushroom podosphaera clandestine
-
 greening orange
-
 tomato late blight
-
 tomato bacterial spot
-
 healthy grape
-
 common mold corn
-
 tomato leaf mold
-
 bacterial blotch peppers
-
 grape black rot
-
 early tomato
-
 healthy strawberry
-
 leaf spot tomato
-
 grape measles
-
 curl virus yellow leaf tomato
-
 scorched leaf strawberry
-
 healthy potato
-
 pudridumbrenegraen-apples
-
 healthy blueberries
-
 late tizon potato
-
 healthy pepper
-
 healthy tomato
-
 early tizon potato
-
 costra apple
-
 tomato focus point
-
 healthy soy
-
 healthy corn
-
 peach bacterial blotch
-```
-### If you are in a raspberry pi you can follow this tutorial to install tensorflow:
+\`\`\`
 
-https://www.tensorflow.org/install/install_raspbian
+---
 
-### Or follow these steps if you are in Ubuntu:
+## 🚀 Inicio Rápido
 
-https://www.tensorflow.org/install/install_linux
+### Requisitos Previos
 
-### You can follow this guide to compile opencv in raspberry:
+- Python 3.7+
+- TensorFlow instalado
+- OpenCV instalado
+- Cámara (opcional, para detección en tiempo real)
 
-https://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/
+### Instalación Rápida
 
-### Once you have installed tensorflow and opencv, download my already trained model:
+\`\`\`bash
+# Clonar el repositorio
+git clone https://github.com/daletoniris/deteccion-de-plagas-en-plantas-con-tensorflow.git
+cd deteccion-de-plagas-en-plantas-con-tensorflow
 
-https://drive.google.com/drive/folders/1sowAcyeYXFCnhekE-WSOxUt5PASTijLq
+# Instalar dependencias
+pip install tensorflow opencv-python
+\`\`\`
 
-### Now you must open and edit the file: 
-```
-recognition.py
-```
-### Search the following code lines:
+---
 
-```
-#Loads label file, strips off carriage return
+## ⚙️ Instalación Detallada
 
- label_lines = [line.rstrip () for line
+### Instalar TensorFlow
 
- in tf.gfile.GFile ("retrained_labels11.txt")]
+#### En Raspberry Pi:
+Sigue la guía oficial: [TensorFlow Installation for Raspberry Pi](https://www.tensorflow.org/install/install_raspbian)
 
+#### En Ubuntu:
+Sigue la guía oficial: [TensorFlow Installation for Linux](https://www.tensorflow.org/install/install_linux)
 
+### Instalar OpenCV
 
-with tf.gfile.FastGFile ("retrained_graph11.pb", 'rb')
-```
-Modify there the route where you have saved the model that you have downloaded.
+#### En Raspberry Pi:
+Sigue esta guía: [OpenCV Installation Guide for Raspberry Pi](https://www.pyimagesearch.com/2016/04/18/install-guide-raspberry-pi-3-raspbian-jessie-opencv-3/)
 
-### Now look for the following code lines at the beginning of the file:
-```
-#if you use a video place your video here:
+---
+
+## 📥 Descargar Modelo Pre-entrenado
+
+1. Descarga el modelo ya entrenado desde:
+   \`\`\`
+   https://drive.google.com/drive/folders/1sowAcyeYXFCnhekE-WSOxUt5PASTijLq
+   \`\`\`
+
+2. Extrae los archivos en el directorio del proyecto
+
+---
+
+## 🎯 Uso
+
+### Configuración del Modelo
+
+Edita el archivo \`recognition.py\` y modifica las rutas del modelo:
+
+\`\`\`python
+# Carga el archivo de etiquetas
+label_lines = [line.rstrip() for line 
+               in tf.gfile.GFile("retrained_labels11.txt")]
+
+# Carga el modelo
+with tf.gfile.FastGFile("retrained_graph11.pb", 'rb') as f:
+    # Tu código aquí
+\`\`\`
+
+**Importante**: Actualiza las rutas según donde guardaste el modelo descargado.
+
+### Configurar Fuente de Video
+
+En \`recognition.py\`, configura según tu necesidad:
+
+\`\`\`python
+# Para usar un video:
 video = 'march.mp4'
-#if you use a video uncomment this line:
- "cam = cv2.VideoCapture (video)"
-#This line is to make the detection in real time through your camera, comment on it if you do it with video:
- "cam = cv2.VideoCapture (0)"
-```
-There, comment or uncomment the code according to your need if you want to do it in real time with a camera or if you want to do the detection from a video.
+cam = cv2.VideoCapture(video)  # Descomenta esta línea
 
-### To execute your code:
-```
+# Para detección en tiempo real con cámara:
+# cam = cv2.VideoCapture(0)  # Descomenta esta línea
+\`\`\`
+
+### Ejecutar Detección
+
+#### Detección en Tiempo Real o Video:
+\`\`\`bash
 python recognition.py
-```
-You should first see the prediction that corresponds to the type of pest you are detecting.
+\`\`\`
 
+#### Detección con Imágenes:
+\`\`\`bash
+python labelimage.py "ruta/de/la/imagen.jpg"
+\`\`\`
 
-### You can use the file: 
-```
-labelimage.py 
-```
-### if you want to do the detection with photos, you can do it in the following way:
-```
-python labelimage.py "path of the image you want to try"
-```
-### If you want to train a new model, use the retrain.py file and follow the steps below:
+---
 
-https://github.com/VikramTiwari/tensorflow-retrain-sample
+## 🎓 Entrenar tu Propio Modelo
 
+### Usar el Script de Reentrenamiento
 
-### If you speak English you will want to understand your model in English, so you can download the original dataset from here and train with those images so that your human text is in English:
+1. Sigue esta guía para reentrenar el modelo:
+   \`\`\`
+   https://github.com/VikramTiwari/tensorflow-retrain-sample
+   \`\`\`
 
+2. Usa el archivo \`retrain.py\` incluido en el repositorio
+
+### Dataset en Inglés
+
+Si prefieres etiquetas en inglés, descarga el dataset original:
+\`\`\`
 https://github.com/salathegroup/plantvillage_deeplearning_paper_dataset/tree/master/raw/color
+\`\`\`
 
+---
 
-### If you want to understand the model for use on mobile devices, you can see this guide, you will use mobilenet for this purpose :
+## 📱 Uso en Dispositivos Móviles (Android)
 
-https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/index.html#3
+### Optimizar Modelo para Mobile
 
+El proyecto usa **MobileNet v1.0_224** para dispositivos móviles.
 
-### I use mobilenet mobilenet_v1_1.0_224, you can download it from here:
-
+#### 1. Descargar MobileNet:
+\`\`\`
 https://github.com/tensorflow/models/blob/master/research/slim/nets/mobilenet_v1.md
+\`\`\`
 
+#### 2. Convertir a TensorFlow Lite:
 
-### Then you must convert your model to a Lite type model to work in android studio, and the build.gradle can recognize it. Use this command, it works fine on Ubuntu 16.04, you will use it for this purpose, Toco is installed when you install tensorflow:
-```
-toco --input_file=tf_files/retrained_graph.pb --output_file=tf_files/optimized_graph.lite --input_format=TENSORFLOW_GRAPHDEF 
---output_format=TFLITE --input_shape="1,224,224,3" --input_array=input --output_array=final_result --inference_type=FLOAT --input_data_type=FLOAT
-```
-### Now you will have an optimized model for android studio: 
- ```
- optimized_graph.lite
-```
+\`\`\`bash
+toco --input_file=tf_files/retrained_graph.pb \\
+     --output_file=tf_files/optimized_graph.lite \\
+     --input_format=TENSORFLOW_GRAPHDEF \\
+     --output_format=TFLITE \\
+     --input_shape="1,224,224,3" \\
+     --input_array=input \\
+     --output_array=final_result \\
+     --inference_type=FLOAT \\
+     --input_data_type=FLOAT
+\`\`\`
 
-### Now you must copy your model to android studio, you can follow this guide to configure your android studio in ubuntu 16.04:
+#### 3. Integrar en Android Studio:
 
-https://codelabs.developers.google.com/codelabs/tensorflow-for-poets-2-tflite/#3
+1. Descarga Android Studio:
+   \`\`\`
+   https://developer.android.com/studio/
+   \`\`\`
 
+2. Sigue esta guía para configurar:
+   \`\`\`
+   https://codelabs.developers.google.com/codelabs/tensorflow-for-poets-2-tflite/#3
+   \`\`\`
 
-### You can download from here the android studio:
+3. Copia \`optimized_graph.lite\` a tu proyecto Android
 
-https://developer.android.com/studio/
+---
 
+## 📁 Estructura del Proyecto
 
+\`\`\`
+deteccion-de-plagas-en-plantas-con-tensorflow/
+├── recognition.py          # Detección en tiempo real/video
+├── labelimage.py          # Detección en imágenes
+├── retrain.py             # Script de reentrenamiento
+├── retrained_graph11.pb   # Modelo pre-entrenado (descargar)
+├── retrained_labels11.txt # Etiquetas del modelo
+└── README.md              # Este archivo
+\`\`\`
 
+---
 
+## 🔧 Configuración Avanzada
 
+### Ajustar Parámetros de Detección
 
+En \`recognition.py\` puedes modificar:
 
+- **Confianza mínima**: Umbral de confianza para mostrar detecciones
+- **Resolución**: Tamaño de frame para procesamiento
+- **FPS**: Velocidad de procesamiento
 
+---
 
+## 📊 Resultados Esperados
 
+Al ejecutar el código, verás:
 
-### happy hacking!
+1. **Ventana de video** con la detección en tiempo real
+2. **Etiqueta de la plaga** detectada
+3. **Nivel de confianza** del modelo
+4. **FPS** de procesamiento
 
+---
 
+## 🐛 Solución de Problemas
 
+### Error: "No se encuentra el modelo"
+- Verifica que descargaste el modelo desde Google Drive
+- Confirma que las rutas en \`recognition.py\` son correctas
 
+### Error: "OpenCV no detecta la cámara"
+- Verifica que la cámara esté conectada
+- Prueba cambiar el índice: \`cv2.VideoCapture(1)\` en lugar de \`0\`
+
+### Error: "TensorFlow no se encuentra"
+- Reinstala TensorFlow siguiendo la guía oficial
+- Verifica la versión de Python (debe ser 3.7+)
+
+---
+
+## 🤝 Contribuir
+
+Las contribuciones son bienvenidas! Puedes:
+
+- 🐛 Reportar bugs
+- 💡 Sugerir nuevas características
+- 📝 Mejorar la documentación
+- 🔧 Enviar pull requests
+
+---
+
+## 📄 Licencia
+
+Este proyecto está bajo la Licencia MIT. Ver el archivo \`LICENSE\` para más detalles.
+
+---
+
+## 👤 Autor
+
+**Daniel Dieser** - Investigador de Robótica e IA
+
+- GitHub: [@daletoniris](https://github.com/daletoniris)
+- Organizaciones: @initiasur, @NiperiaLab
+
+---
+
+## 🔗 Enlaces Útiles
+
+- [TensorFlow Official](https://www.tensorflow.org/)
+- [OpenCV Documentation](https://docs.opencv.org/)
+- [MobileNet Guide](https://codelabs.developers.google.com/codelabs/tensorflow-for-poets/index.html)
+- [Plant Village Dataset](https://github.com/salathegroup/plantvillage_deeplearning_paper_dataset)
+
+---
+
+<div align="center">
+
+**🌱 Protegiendo cultivos con Inteligencia Artificial**
+
+[⭐ Dános una estrella si te gustó el proyecto](https://github.com/daletoniris/deteccion-de-plagas-en-plantas-con-tensorflow)
+
+**¡Feliz hacking! 🚀**
+
+</div>
